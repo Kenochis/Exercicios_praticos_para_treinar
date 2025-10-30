@@ -26,6 +26,6 @@ function clienteFuncionario(ValorProduto){ //função para cliente funcionário
 }
 
 //Testando as funções
-clienteComum(notebook = 10000); //valor do notebook = 10000 reais
+clienteComum(notebook = 10000); //valor do produto = 10000 reais
 clienteVip(notebook = 10000);
 clienteFuncionario(notebook = 10000);
