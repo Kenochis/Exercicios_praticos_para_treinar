@@ -2,8 +2,8 @@
 
 function desconto(porcentagem, valor){ //recebe a porcentagem de desconto e o valor do produto
 
-    let descontoCliente = valor / 100 * porcentagem; 
-    let valorFinal = valor - descontoCliente; 
+    const descontoCliente = valor / 100 * porcentagem; 
+    const valorFinal = valor - descontoCliente; 
     return valorFinal;
 }
 
