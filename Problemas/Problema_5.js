@@ -50,4 +50,6 @@ function condicaoDePagamento(valorProduto, formaDePagamento, parcelado = 0){
     }
 }
 
-condicaoDePagamento(valor = 990.00, MetodoDePagamento = `Crédito`, parcela = 3);
+condicaoDePagamento(valor = 990.00, metodoDePagamento = `Crédito`, parcela = 3);
+
+//concluido
