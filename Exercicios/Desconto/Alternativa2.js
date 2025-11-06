@@ -2,7 +2,7 @@
 
 function desconto(porcentagem, valor){ //recebe a porcentagem de desconto e o valor do produto
 
-    const descontoCliente = valor / 100 * porcentagem; 
+    const descontoCliente = (valor / 100) * porcentagem; 
     const valorFinal = valor - descontoCliente; 
     return valorFinal;
 }
@@ -34,3 +34,5 @@ function clientes(tipo, ValorProduto){
 clientes(tipo = "Comum", notebook = 10000); //tipo de cliente e valor do produto = 10000 reais
 clientes(tipo = "Vip", notebook = 10000);
 clientes(tipo = "Funcionário", notebook = 10000);
+
+//concluido - código mais simples;
