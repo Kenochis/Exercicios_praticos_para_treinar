@@ -8,7 +8,7 @@
                    Menor número ímpar -> 1
 */
 
-const { gets, print } = require(`./Funcoes_auxiliares2`);
+const { gets, print } = require(`./Funcoes_auxiliares2.js`);
 
 const listaDeNumeros = [6, 7, 1, 3, 10, 11, 34, 25, 99, 16];
 
