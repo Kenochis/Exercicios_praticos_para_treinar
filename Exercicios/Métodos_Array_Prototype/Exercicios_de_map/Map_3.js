@@ -1,7 +1,6 @@
 /*  Exercício 3 — Transformar em frases
     Usando o mesmo array do exercício 2:
-        Crie um array de frases assim:
-            "Celeste custa R$ 50"
+      Crie um array de frases assim:  "Celeste custa R$ 50"
 */
 
 const jogos = [

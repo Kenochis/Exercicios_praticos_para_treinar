@@ -10,7 +10,10 @@ const jogos = [
 
 const jogosMaisCaros = jogos.map(jogo => {
     const porcentagem = (jogo.preco / 100) * 10;
-    return jogo.preco + porcentagem;
+    return {
+      nome: jogo.nome,
+      preco: jogo.preco + porcentagem
+    };
 });
 
 console.log(jogosMaisCaros);
