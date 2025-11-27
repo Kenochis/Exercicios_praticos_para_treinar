@@ -21,3 +21,5 @@ console.log(nomes);
 const valores = produtos.filter(produto => produto.preco >= 4 );
 
 console.log(valores);
+
+// concluido
