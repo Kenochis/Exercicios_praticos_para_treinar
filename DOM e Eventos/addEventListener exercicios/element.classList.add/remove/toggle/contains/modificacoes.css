@@ -1,0 +1,72 @@
+
+.teste1 {
+    color: rgb(13, 204, 204);
+}
+
+/*------------------------*/
+
+.menu-teste {
+    position: fixed; /* posição fixa */
+    top: 6.8%; /* top da pagina */
+    right: 1%; /* lateral direita */
+}
+
+#btn-menu {
+    padding: 5px 15px; /* altura e comprimento */
+    cursor: pointer;
+    background: #5f8f81; /* cor da linha onde está */
+    color: #000000; /* cor do texto */
+    border: 3px solid #000000; /* (tamanho, "?", cor) da borda */
+}
+
+.painel {
+    font-family: "Mystery Quest", sans-serif;
+    margin-top: 10px;
+    width: 250px;
+    background: #e7dac8;
+    border: 1px solid #8f8e8e;
+    padding: 15px;
+    display: none; /* começa fechado */
+
+    height: calc(100vh - 60px); /* ocupa a tela toda abaixo do botão */
+    overflow-y: auto;
+}
+
+/*------------------------*/
+
+.msg {
+    color: rgb(196, 0, 0);
+    font-size: 15px;
+}
+
+.erro {
+    border: 2px solid rgb(255, 0, 0);
+}
+
+/*------------------------*/
+
+.expandir {
+    position: fixed;
+    left: 20%;
+    top: 31.5%;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    background: rgb(0, 128, 96);
+    transition: 0.3s;
+    margin-top: 5%;
+
+    position: absolute;
+    top: 100%;     /* Fica logo abaixo do botão */
+    left: 30%;     /* Centro */
+}
+
+.box.expandido {
+    width: 127.18px;
+    height: 127.18px;
+    transform: translateX(-30%) scale(1);
+    /* translateX(): mantém o elemento CENTRALIZADO */
+    /* scale(): controla a animação de expandir */
+}
