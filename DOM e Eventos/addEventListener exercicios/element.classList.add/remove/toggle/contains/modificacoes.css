@@ -70,3 +70,12 @@
     /* translateX(): mantém o elemento CENTRALIZADO */
     /* scale(): controla a animação de expandir */
 }
+
+/*------------------------*/
+
+.feito {
+  text-decoration: line-through; /* riscado */
+  color: gray; /* cinza */
+  transition: 0.3s;
+  transform: translateX(1%) scale(1);
+}

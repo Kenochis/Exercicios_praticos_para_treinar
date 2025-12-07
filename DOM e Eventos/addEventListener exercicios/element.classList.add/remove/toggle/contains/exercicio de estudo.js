@@ -45,3 +45,10 @@ const btnExpandir = document.getElementById('btn5');
 btnExpandir.addEventListener("click", () => {
   box.classList.toggle("expandido");
 });
+
+/*----------------------------*/
+//Crie classe .feito (riscado + cor cinza). No clique, faça toggle("feito").
+
+itens.addEventListener("click", (event) => {
+    event.target.classList.toggle('feito');
+});

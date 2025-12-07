@@ -1,0 +1,23 @@
+.item {
+    font-family: "Mystery Quest", sans-serif;
+    font-weight: bold;
+    color: #00502f;
+}
+
+/*-------------------------------*/
+
+.opcao {
+    text-decoration:line-through;
+    color:brown;
+    transition: 0.3s;
+    transform: translateX(1%) scale(1);
+}
+
+.msg {
+    color: red;
+    position: fixed; /* posição fixa */
+    top: 37.2%; /* top da pagina */
+    left: 15%; /* lateral esquerda */
+}
+
+/*-------------------------------*/
