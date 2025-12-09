@@ -1,0 +1,51 @@
+.btns {
+    padding: 3px 5px;
+    width: 50%;
+    gap: 10px;      /* distância entre eles */
+}
+
+#btn {
+    margin-top: 3px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background: #d3d3d3;
+    font-family: "Mystery Quest", sans-serif;
+    font-weight: bold;
+    color:rgb(46, 102, 0)
+}
+
+/*-----------------------------------*/
+
+#botao {
+    margin-top: 3px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background: #d3d3d3;
+    font-family: "Mystery Quest", sans-serif;
+    color:rgb(0, 69, 172)
+}
+
+/*-----------------------------------*/
+
+.menu-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+#btnMenu {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.painel {
+  margin-top: 10px;
+  width: 250px;
+  background: #e7dac8;
+  border: 1px solid #8f8e8e;
+  padding: 15px;
+  display: none; /* começa fechado */
+
+  height: calc(100vh - 60px); /* ocupa a tela toda abaixo do botão */
+  overflow-y: auto;
+}

@@ -21,7 +21,7 @@ btnAdd.addEventListener("click", () => {
         <button class="excluir">Excluir</button>
     `;
 
-    // 🟡 Se o container tiver algum card, insere ANTES do primeiro
+    // Se o container tiver algum card, insere ANTES do primeiro
     if (container.firstChild) {
         container.insertBefore(novoCard, container.firstChild);
     } else {
