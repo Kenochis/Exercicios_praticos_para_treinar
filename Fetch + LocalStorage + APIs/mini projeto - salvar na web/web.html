@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>TODO-list</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilização.css">
+</head>
+
+<body>
+
+    <h1 id="titulo">Lista de Tarefas</h1>
+
+    <div class="menu-container">
+        <button aria-label="Abrir menu" id="btnMenu">☰</button>
+
+        <div id="painel" class="painel">
+            <div class="topoDoMenu">
+                <button class="btnExcluirFavorito">🗑️</button>
+                <button class="btnFavoritar">⭐</button>
+            </div>
+
+            <p class="informacao">Tarefas Favoritas:</p>
+            <ul id="tarefasFavoritas"></ul>
+
+        </div>
+    </div>
+
+    <p class="descricao">Tarefas Da Semana</p>
+
+    <form class="addTarefa">
+        <label for="nova-tarefa">Nova Tarefa:</label>
+        <input type="text" id="nova-tarefa" placeholder="Digite nova tarefa..">
+
+        <button type="submit" id="btnAdd">Adicionar</button>
+    </form>
+
+    <ul id="lista">
+        <li class="tarefa">
+            <div class="esquerda">
+                <input type="checkbox" class="checkbox">
+                <span class="txt">Primeira tarefa padrão</span>
+            </div>
+
+            <button class="btnDelete">Delete</button>
+        </li>
+    </ul>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
