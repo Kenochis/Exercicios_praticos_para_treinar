@@ -1,0 +1,43 @@
+.listaDosCard {
+    list-style: none;
+}
+
+.card {
+    background: rgb(0, 113, 128);
+    border: 3px solid black;
+    width: 30%;
+    height: 250px;
+    margin-top: 5%;
+    border-radius: 2rem;
+}
+
+.card .btnsDoCard {
+    display: flex;
+    padding: 1% 1%;
+    gap: 49%;
+   
+}
+.card .btnsDoCard .btnExcluir {
+    background: rgb(0, 113, 128);
+    border: none;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    font-size: 2rem;
+    padding: 8px 10px;
+}
+.card .btnsDoCard .btnFavoritar {
+    background: rgb(0, 113, 128);
+    border: none;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    font-size: 2rem;
+    padding: 8px 10px;
+}
+
+.card .number {
+    font-family: "DynaPuff", sans-serif;
+}
+
+.card .name {
+    font-family: "DynaPuff", sans-serif;
+}

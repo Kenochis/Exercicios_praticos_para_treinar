@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Procurar Pokemon</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilizar.css">
+</head>
+
+<body>
+
+    <h1 id="titulo">Pokemons</h1>
+
+    <p id="descricao">Buscar pokemon na API</p>
+
+    <form class="procurar">
+        <label for="Buscar-pokemon">Pokemon:</label>
+        <input type="text" id="Buscar" placeholder="Nome ou id do pokemon..">
+
+        <button type="submit" id="btnBuscar">Adicionar</button>
+    </form>
+
+    <ol id="blocoDePokemon" class="listaDosCard">
+        <li class="card">
+            <div class="btnsDoCard">
+                <button class="btnExcluir">🗑️</button>
+                <button class="btnFavoritar">⭐</button>
+            </div>
+
+            <span class="number"></span>
+            <span class="name"></span>
+
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" alt="">
+            
+        </li>
+    </ol>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
