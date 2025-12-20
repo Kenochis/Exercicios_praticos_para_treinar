@@ -11,22 +11,38 @@
 
 <body>
 
-    <h1 id="titulo">Pokemons</h1>
+  <h1 id="titulo">Pokemons</h1>
 
-    <p id="descricao">Buscar pokemon na API</p>
+  <div class="menu-container">
+      <button aria-label="Abrir menu" id="btnMenu">☰</button>
 
-    <form class="procurar">
-        <label for="BuscarPokeApi">Pokemon:</label>
-        <input type="text" id="Buscar" placeholder="Nome ou id do pokemon..">
+      <div id="painel" class="painel">
+          <div class="topoDoMenu">
+              <button class="btnExcluirFavorito">🗑️</button>
+              <button class="btnInspecionar">🔎</button>
+          </div>
 
-        <button type="submit" id="btnBuscar">🔍</button>
-    </form>
+          <p class="informacao">Pokemons Favoritos:</p>
+          <ul id="listaDeFavoritos">
 
-    <ol id="blocoDePokemon" class="listaDosCard">
+          </ul>
+      </div>
+  </div>
+
+  <p id="descricao">Buscar pokemon na API</p>
+
+  <form class="procurar">
+      <label for="BuscarPokeApi">Pokemon:</label>
+      <input type="text" id="Buscar" placeholder="Nome ou id do pokemon..">
+
+      <button type="submit" id="btnBuscar">🔍</button>
+  </form>
+
+  <ul id="blocoDePokemon" class="listaDosCard">
         
-    </ol>
+  </ul>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>

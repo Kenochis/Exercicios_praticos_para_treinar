@@ -1,5 +1,5 @@
 .listaDosCard {
-    list-style: none;
+    list-style: none; /* remove as bolinhas da lista */
 }
 
 .card {
@@ -9,14 +9,17 @@
     height: 250px;
     margin-top: 5%;
     border-radius: 2rem;
+
+    position: relative; /* base para position absolute da imagem */
+    overflow: hidden;   /* evita imagem sair do card */
 }
 
 .card .btnsDoCard {
-    display: flex;
+    display: flex; /* botões lado a lado */
     padding: 1% 1%;
-    gap: 49%;
-   
+    gap: 49%; /* espaço entre os botões */
 }
+
 .card .btnsDoCard .btnExcluir {
     background: rgb(0, 113, 128);
     border: none;
@@ -25,6 +28,7 @@
     font-size: 2rem;
     padding: 8px 10px;
 }
+
 .card .btnsDoCard .btnFavoritar {
     background: rgb(0, 113, 128);
     border: none;
@@ -34,12 +38,84 @@
     padding: 8px 10px;
 }
 
+.card .detail {
+    display: flex;
+    flex-direction: column; /* número acima do nome */
+    gap: 5px;
+    margin-left: 2%;
+}
+
 .card .number {
     font-family: "DynaPuff", sans-serif;
-    
+    color: rgba(0, 0, 0, 0.459); /* número mais apagado */
 }
 
 .card .name {
     font-family: "DynaPuff", sans-serif;
-    
+    font-size: 1.2rem;
+}
+
+.card img {
+    position: absolute; /* posiciona livre dentro do card */
+    right: 0;
+    bottom: 0;
+
+    width: 190px; /* tamanho da imagem */
+    height: auto;
+
+    filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.651)); /* sombra */
+    pointer-events: none; /* não interfere nos cliques */
+}
+
+/*----------------------------*/
+
+.menu-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+#btnMenu {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.painel {
+  margin-top: 10px;
+  width: 250px;
+  background: #e7dac8;
+  border: 1px solid #8f8e8e;
+  padding: 15px;
+  display: none; /* começa fechado */
+
+  height: calc(100vh - 60px); /* ocupa a tela toda abaixo do botão */
+  overflow-y: auto;
+}
+
+.painel .informacao {
+    font-family: "DynaPuff", sans-serif;
+}
+
+.painel .topoDoMenu {
+    display: flex;
+    align-items: center;
+    gap: 150px;  /* espaço entre checkbox e texto */
+}
+
+.painel .topoDoMenu .btnExcluirFavorito {
+    background: #e7dac8;
+    border: none;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    font-size: 2rem;
+    padding: 3px 4px;
+}
+
+.painel .topoDoMenu .btnInspecionar {
+    background: #e7dac8;
+    border: none;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    font-size: 2rem;
+    padding: 3px 4px;
 }
