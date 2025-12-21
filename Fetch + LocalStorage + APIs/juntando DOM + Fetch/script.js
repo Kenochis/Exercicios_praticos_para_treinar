@@ -1,18 +1,9 @@
-/* quarto - ao clicar no btnApagar ou btnInspecionar, 
-os li da listFavoritos vão virar um span durante esse evento de click, com checkbox. 
-Enquanto no btnApagar poderá selecionar (risco) mais de um item, 
-no btnInspecionar só poderá ter um item selecionado. */
-
-/* quinto - btnApagar (remove do localStorage e apaga o nome da lista de favoritos), 
-e btnInspecionar (fecha o menu e mostra o card do pokemon selecionado). */
-
-/* sexto - criar um botão que seleciona todos os pokemon. 
-Ao acionar ele, o botão inspecionar some e fica aparece no lugar dele outro botão, 
-porém de cancelar seleção. E se apertar no excluir, vai excluir todos. */
+/* Buscar Pokémon na API */
 
 // FAVORITOS (LOCALSTORAGE)
 let favoritosArray = JSON.parse(localStorage.getItem("Favoritos"));
 
+// garante que sempre seja um array
 if (!Array.isArray(favoritosArray)) {
     favoritosArray = [];
 }
@@ -29,6 +20,12 @@ const input = document.querySelector('#Buscar');
 const btnMenu = document.querySelector("#btnMenu");
 const painel = document.querySelector('#painel');
 const listFavoritos = document.getElementById('listaDeFavoritos');
+
+// controla se o painel está em modo "inspecionar"
+let inspecionar = false;
+
+// controla se o painel está em modo "remover"
+let remover = false;
 
 // CRIA CARD DO POKÉMON
 function criarCard(pokemon) {
@@ -119,7 +116,21 @@ function addFavorito(pokemon) {
     });
 
     salvarFavoritos();
-    carregarFavoritos();
+    renderizarFavoritos();
+}
+
+function removerFavorito(txt) {
+    favoritosArray = favoritosArray.filter(poke => poke.name !== txt);
+    salvarFavoritos();
+
+    // Se não houver mais favoritos, o modo seleção DEVE ser desligado.
+    if (favoritosArray.length === 0) {
+        remover = false;
+        inspecionar = false;
+        listFavoritos.classList.remove("listFav");
+    }
+
+    renderizarFavoritos();
 }
 
 function carregarFavoritos() {
@@ -132,10 +143,115 @@ function carregarFavoritos() {
     });
 }
 
+function renderizarFavoritos() {
+    listFavoritos.innerHTML = "";
+
+    // Se estiver em qualquer modo de seleção
+    if (remover || inspecionar) {
+        criarSelecionar(); // checkbox substitui bolinha
+    } else {
+        carregarFavoritos(); // lista normal
+    }
+}
+
 // MENU LATERAL
 btnMenu.addEventListener("click", () => {
     painel.style.display = painel.style.display === "block" ? "none" : "block";
+
+    // Abrir menu sempre reseta o estado
+    remover = false;
+    inspecionar = false;
+
+    listFavoritos.classList.remove("listFav");
+    renderizarFavoritos();
 });
 
-// CARREGAR FAVORITOS AO INICIAR
+// MODO SELEÇÃO (checkbox)
+function criarSelecionar () {
+    listFavoritos.innerHTML = "";
+
+    favoritosArray.forEach(poke => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+        <input type="checkbox" class="checkbox">
+        <span class="txt">${poke.name}</span>
+        `;
+        listFavoritos.appendChild(li);
+    });
+};
+
+// BOTÕES DO TOPO (PAINEL)
+painel.addEventListener("click", (event) => {
+    const clique = event.target;
+    const btns = clique.closest(".topoDoMenu");
+    if (!btns) return;
+
+    // Excluir dos favoritos
+    if (clique.classList.contains("btnExcluirFavorito")) {
+        if (remover === false) {
+            listFavoritos.classList.add("listFav");
+
+            criarSelecionar();
+            remover = true;
+        } else {
+            listFavoritos.classList.remove("listFav");
+
+            carregarFavoritos();
+            remover = false
+        }
+        
+
+        if (inspecionar === true) inspecionar = false;
+    }
+
+    // Inspecionar Pokémon
+    if (clique.classList.contains("btnInspecionar")) {
+        if (inspecionar === false) {
+            listFavoritos.classList.add("listFav");
+
+            criarSelecionar();
+            inspecionar = true;
+        } else {
+            listFavoritos.classList.remove("listFav");
+
+            carregarFavoritos();
+            inspecionar = false
+        }
+
+        if (remover === true) remover = false;
+    }
+})
+
+// CLIQUE NA LISTA
+listFavoritos.addEventListener("click", (event) => {
+    // pega o <li> mais próximo.
+    const li = event.target.closest('li');
+
+    // se não clicou dentro de uma tarefa, ignora.
+    if (!li) return;
+
+    if (event.target.tagName === "INPUT") {
+        // pega o span SOMENTE dessa li.
+        const txt = li.querySelector('.txt');
+
+        // adiciona/remove o risco.
+        txt.classList.toggle('risco');
+
+        // INSPECIONAR = ação única.
+        if (inspecionar === true) {
+            carregarFavoritos();
+            painel.style.display = painel.style.display === "block" ? "none" : "block";
+            buscarPokemon(txt.textContent);
+
+            inspecionar = false;
+        }
+
+        // REMOVER = pode ser múltiplo.
+        if (remover === true) {
+            removerFavorito(txt.textContent);
+        }
+    }
+});
+
+// INICIALIZAÇÃO
 carregarFavoritos();

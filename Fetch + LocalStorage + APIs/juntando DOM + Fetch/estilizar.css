@@ -119,3 +119,37 @@
     font-size: 2rem;
     padding: 3px 4px;
 }
+
+/*-----------------*/
+
+.risco {
+    text-decoration: line-through;
+    color: #888; /* opcional, deixa cinza */
+    transition: 0.4s;
+}
+
+#listaDeFavoritos {
+    padding-left: 18px; /* bolinha perto da borda */
+}
+
+#listaDeFavoritos.listFav {
+    list-style: none; /* remove bolinha */
+    padding-left: 18px; /* mantém o texto no mesmo lugar */
+}
+
+#listaDeFavoritos.listFav li {
+    position: relative;
+}
+
+#listaDeFavoritos.listFav .checkbox {
+    position: absolute;
+
+    left: -18px;               /* empurra mais pra esquerda */
+    top: 51%;
+    transform: translate(-70%, -70%); 
+    /* ↑ centraliza o quadrado exatamente no lugar da bolinha */
+}
+
+#listaDeFavoritos.listFav .txt {
+    display: inline-block;
+}
